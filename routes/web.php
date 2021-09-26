@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/jobs', [JobsController::class, 'index']);
+Route::get('/jobs/create', [JobsController::class, 'create']);
+Route::get('/jobs/{job}', [JobsController::class, 'edit']);
